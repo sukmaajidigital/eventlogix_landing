@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 <meta property="og:locale" content="id_ID">
 <meta property="og:title" content="eventlogix.id — Dynamic Invitations. Seamless RSVP. Tailored for Every Event.">
 <meta property="og:description" content="Platform SaaS undangan digital untuk Event Organizer: subdomain instan, domain kustom Auto-SSL, dynamic theming JSON, RSVP fleksibel, dan QR Code check-in per tamu.">
-<meta property="og:image" content="https://eventlogix.id/assets/og-cover.jpg">
+<meta property="og:image" content="https://eventlogix.id/image/head.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="eventlogix.id — Platform SaaS Undangan Digital untuk Event Organizer">
@@ -33,26 +33,36 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="eventlogix.id — Dynamic Invitations. Seamless RSVP.">
 <meta name="twitter:description" content="Satu platform, subdomain tak terbatas. Setiap acara punya identitas undangan dan RSVP-nya sendiri.">
-<meta name="twitter:image" content="https://eventlogix.id/assets/og-cover.jpg">
+<meta name="twitter:image" content="https://eventlogix.id/image/head.png">
 <meta name="twitter:image:alt" content="eventlogix.id — Platform SaaS Undangan Digital untuk Event Organizer">
 
 <!-- ===================== STRUCTURED DATA (JSON-LD) ===================== -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "eventlogix.id",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "url": "https://eventlogix.id/",
-  "description": "Platform SaaS multi-tenant untuk undangan digital dan RSVP, dirancang untuk Event Organizer. Mendukung subdomain instan, domain kustom dengan Auto-SSL, dynamic theming berbasis JSON, form RSVP dinamis, serta QR Code check-in per tamu.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "IDR",
-    "description": "Waitlist akses awal / early-bird"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "eventlogix.id",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://eventlogix.id/",
+    "description": "Platform SaaS multi-tenant untuk undangan digital dan RSVP, dirancang untuk Event Organizer. Mendukung subdomain instan, domain kustom dengan Auto-SSL, dynamic theming berbasis JSON, form RSVP dinamis, serta QR Code check-in per tamu.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR",
+      "description": "Waitlist akses awal / early-bird"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "eventlogix.id",
+    "url": "https://eventlogix.id/",
+    "logo": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2314171F'/%3E%3Cpath d='M20 40 L32 20 L44 40 Z' fill='none' stroke='%23C8A24A' stroke-width='2.5'/%3E%3C/svg%3E",
+    "sameAs": []
   }
-}
+]
 </script>
 
 <!-- ===================== FONTS ===================== -->
@@ -85,8 +95,37 @@
 </script>
 
 <style>
-  html { scroll-behavior: smooth; }
   body { background-color: #14171F; }
+
+  /* Grid pattern overlay */
+  .grid-pattern {
+    background-image: linear-gradient(rgba(42, 47, 59, 0.25) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(42, 47, 59, 0.25) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center;
+  }
+
+  /* Glowing background accents */
+  .glow-1 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(200, 162, 74, 0.08) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .glow-2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79, 122, 114, 0.06) 0%, transparent 70%);
+    bottom: 20%;
+    left: -100px;
+    z-index: 0;
+    pointer-events: none;
+  }
 
   /* Perforated ticket-stub edge */
   .perforated {
@@ -106,23 +145,30 @@
 
   /* Signature hero: fanned invitation cards */
   .fan-card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, z-index 0.2s ease;
     transform-origin: bottom center;
   }
-  .fan-wrap:hover .fan-card-1 { transform: rotate(-14deg) translateX(-18px) translateY(-6px); }
-  .fan-wrap:hover .fan-card-2 { transform: rotate(0deg) translateY(-14px); }
-  .fan-wrap:hover .fan-card-3 { transform: rotate(14deg) translateX(18px) translateY(-6px); }
+  .fan-wrap:hover .fan-card-1 { transform: rotate(-14deg) translateX(-24px) translateY(-6px); }
+  .fan-wrap:hover .fan-card-2 { transform: rotate(0deg) translateY(-16px); }
+  .fan-wrap:hover .fan-card-3 { transform: rotate(14deg) translateX(24px) translateY(-6px); }
+
+  /* Hover state for individual cards to pop out */
+  .fan-card:hover {
+    z-index: 40 !important;
+    transform: scale(1.08) translateY(-24px) !important;
+    box-shadow: 0 30px 60px -15px rgba(200, 162, 74, 0.25) !important;
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
     .fan-card { transition: none; }
     .fan-wrap:hover .fan-card-1,
     .fan-wrap:hover .fan-card-2,
     .fan-wrap:hover .fan-card-3 { transform: none; }
+    .fan-card:hover { transform: none !important; }
   }
 
-  /* Visible keyboard focus across the page */
-  a:focus-visible, button:focus-visible, input:focus-visible {
+  /* Focus styling */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
     outline: 2px solid #C8A24A;
     outline-offset: 3px;
     border-radius: 4px;
@@ -135,91 +181,150 @@
 </style>
 </head>
 
-<body class="font-body text-paper antialiased">
+<body class="font-body text-paper antialiased min-h-screen relative overflow-x-hidden">
+
+<!-- Decorative grid background & glows -->
+<div class="absolute inset-0 grid-pattern pointer-events-none z-0"></div>
+<div class="glow-1"></div>
+<div class="glow-2"></div>
 
 <!-- ===================== NAVBAR ===================== -->
-<header class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur-md border-b border-ink-line">
+<header class="fixed top-0 inset-x-0 z-50 bg-ink/80 backdrop-blur-lg border-b border-ink-line">
   <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-    <a href="#" class="font-display text-xl tracking-tight text-paper">
-      eventlogix<span class="text-brass">.id</span>
+    <a href="#" class="font-display text-2xl tracking-tight text-paper flex items-center gap-2">
+      <svg class="w-6 h-6 text-brass" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="3"/>
+        <path d="M20 40 L32 20 L44 40 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+      </svg>
+      <span>eventlogix<span class="text-brass">.id</span></span>
     </a>
 
     <div class="hidden md:flex items-center gap-8 text-sm">
-      <a href="#fitur" class="text-paper/80 hover:text-brass transition-colors">Fitur</a>
-      <a href="#demo" class="text-paper/80 hover:text-brass transition-colors">Demo Sampel</a>
-      <span class="flex items-center gap-1.5 text-paper/40 cursor-default">
+      <a href="#fitur" class="text-paper/85 hover:text-brass transition-colors font-medium">Fitur Utama</a>
+      <a href="#demo" class="text-paper/85 hover:text-brass transition-colors font-medium">Demo Sampel</a>
+      <a href="#pricing" class="text-paper/85 hover:text-brass transition-colors font-medium flex items-center gap-2">
         Harga
-        <span class="mono-chip text-[10px] uppercase bg-ink-soft border border-ink-line px-1.5 py-0.5 rounded-sm text-brass/70">Segera</span>
-      </span>
+        <span class="mono-chip text-[9px] uppercase bg-brass/10 border border-brass/30 px-1.5 py-0.5 rounded text-brass">Akses Awal</span>
+      </a>
+      <a href="#faq" class="text-paper/85 hover:text-brass transition-colors font-medium">Tanya Jawab</a>
     </div>
 
-    <a href="#cta" class="bg-brass hover:bg-brass-dim text-ink font-semibold text-sm px-5 py-2.5 rounded-sm transition-colors">
-      Mulai Buat Undangan
+    <a href="demo.html" class="bg-brass hover:bg-brass-dim text-ink font-bold text-sm px-5 py-2.5 rounded transition-colors shadow-lg shadow-brass/10 flex items-center gap-1.5">
+      Mulai Demo Interaktif
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
     </a>
   </nav>
 </header>
 
-<main class="pt-16">
+<main class="pt-16 relative z-10">
 
   <!-- ===================== HERO ===================== -->
-  <section class="relative overflow-hidden border-b border-ink-line">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-2 gap-16 items-center">
+  <section class="relative border-b border-ink-line">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-      <div>
-        <p class="mono-chip text-xs uppercase text-brass mb-5">
-          Platform SaaS Undangan Digital · Khusus Event Organizer
-        </p>
-
-        <h1 class="font-display font-medium text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-paper">
-          Satu Platform Inti.
-          <span class="block italic text-brass">Ribuan Identitas Undangan.</span>
-        </h1>
-
-        <p class="mt-6 text-paper/70 text-lg leading-relaxed max-w-xl">
-          Setiap acara mendapat subdomain instan di <span class="mono-chip text-paper">eventlogix.id</span>, bisa dipindahkan ke domain milik klien lewat satu kali pengaturan CNAME, dan form RSVP yang menyesuaikan bentuknya sendiri — pernikahan, seminar, atau pesta ulang tahun, dijalankan oleh mesin yang sama.
-        </p>
-
-        <div class="flex flex-wrap gap-2 mt-6">
-          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft text-paper/60 px-2.5 py-1 rounded-sm">Auto-SSL</span>
-          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft text-paper/60 px-2.5 py-1 rounded-sm">JSON Theme Engine</span>
-          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft text-paper/60 px-2.5 py-1 rounded-sm">Multi-Tenant</span>
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 bg-brass/10 border border-brass/30 rounded px-3 py-1 mb-6">
+          <span class="w-2 h-2 rounded-full bg-brass animate-pulse"></span>
+          <span class="mono-chip text-[11px] uppercase text-brass font-medium">
+            Platform SaaS Undangan Digital · Khusus Event Organizer
+          </span>
         </div>
 
-        <div class="flex flex-wrap gap-4 mt-9">
-          <a href="#demo" class="bg-brass hover:bg-brass-dim text-ink font-semibold px-6 py-3.5 rounded-sm transition-colors">
-            Coba Demo Gratis
+        <h1 class="font-display font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-paper">
+          Satu Platform Inti.<br>
+          <span class="italic text-brass font-normal">Ribuan Desain Undangan.</span>
+        </h1>
+
+        <p class="mt-6 text-paper/70 text-lg leading-relaxed max-w-2xl">
+          Setiap acara mendapat subdomain instan di <span class="mono-chip text-paper border-b border-paper/20">eventlogix.id</span>, bisa dialihkan ke domain custom klien Anda via CNAME + Auto-SSL, dan form RSVP dinamis yang menyesuaikan jenis acara — pernikahan, konferensi, atau pesta ulang tahun.
+        </p>
+
+        <div class="flex flex-wrap gap-2.5 mt-6">
+          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft/60 text-paper/70 px-3 py-1 rounded">Auto-SSL Terintegrasi</span>
+          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft/60 text-paper/70 px-3 py-1 rounded">JSON Theme Schema</span>
+          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft/60 text-paper/70 px-3 py-1 rounded">Multi-Tenant Core</span>
+          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft/60 text-paper/70 px-3 py-1 rounded">QR Code Guest Check-in</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 mt-10">
+          <a href="demo.html" class="bg-brass hover:bg-brass-dim text-ink font-bold px-8 py-4 rounded transition-colors text-center shadow-lg shadow-brass/15 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Coba Demo Interaktif (Gratis)
           </a>
-          <a href="#fitur" class="border border-paper/30 hover:border-brass hover:text-brass text-paper font-semibold px-6 py-3.5 rounded-sm transition-colors">
-            Pelajari Fitur
+          <a href="#fitur" class="border border-paper/30 hover:border-brass hover:text-brass text-paper font-semibold px-8 py-4 rounded transition-colors text-center">
+            Pelajari Fitur &amp; Arsitektur
           </a>
         </div>
       </div>
 
       <!-- Signature element: fanned invitation/ticket cards -->
-      <div class="fan-wrap relative h-[420px] flex items-center justify-center select-none">
-        <div class="fan-card fan-card-1 absolute w-56 h-72 bg-paper text-ink rounded-md shadow-2xl p-5 -rotate-6 -translate-x-2">
-          <p class="mono-chip text-[10px] uppercase text-clay">Pernikahan</p>
-          <p class="font-display text-lg mt-2 leading-snug">The Wedding of<br>Alice &amp; Bob</p>
-          <div class="mt-6 border-t border-ink/10 pt-3">
-            <p class="mono-chip text-[10px] text-ink/50">alice-bob.eventlogix.id</p>
-          </div>
+      <div class="lg:col-span-5 fan-wrap relative h-[420px] flex items-center justify-center select-none mt-8 lg:mt-0">
+        <!-- Interactive Tooltip -->
+        <div class="absolute top-4 bg-ink-soft/90 border border-ink-line px-3 py-1 rounded text-xs text-paper/50 flex items-center gap-2 pointer-events-none transition-opacity duration-300">
+          <svg class="w-3.5 h-3.5 text-brass animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+          </svg>
+          Klik kartu untuk mencoba template
         </div>
 
-        <div class="fan-card fan-card-2 absolute w-56 h-72 bg-paper text-ink rounded-md shadow-2xl p-5 z-10">
-          <p class="mono-chip text-[10px] uppercase text-mist">Korporat</p>
-          <p class="font-display text-lg mt-2 leading-snug">Tech Conference<br>2026</p>
-          <div class="mt-6 border-t border-ink/10 pt-3">
-            <p class="mono-chip text-[10px] text-ink/50">techconf2026.eventlogix.id</p>
+        <!-- Card 1: Wedding -->
+        <a href="demo.html?theme=wedding" class="fan-card fan-card-1 absolute w-60 h-80 bg-paper text-ink rounded-lg shadow-2xl p-6 -rotate-8 -translate-x-4 border border-ink/5 flex flex-col justify-between z-10">
+          <div>
+            <div class="flex items-center justify-between border-b border-ink/10 pb-2">
+              <p class="mono-chip text-[10px] uppercase font-bold text-clay tracking-wider">Template Pernikahan</p>
+              <span class="w-1.5 h-1.5 rounded-full bg-clay"></span>
+            </div>
+            <p class="font-display text-xl mt-4 font-bold leading-tight">The Wedding of<br><span class="text-clay italic">Alice &amp; Bob</span></p>
+            <p class="text-xs text-ink/60 mt-3 font-medium">Minggu, 12 Oktober 2026</p>
           </div>
-        </div>
+          <div>
+            <div class="border-t border-ink/10 pt-3 flex items-center justify-between">
+              <p class="mono-chip text-[9px] text-ink/40 font-medium">alice-bob.eventlogix.id</p>
+              <span class="text-clay font-bold text-xs">Pilih →</span>
+            </div>
+          </div>
+        </a>
 
-        <div class="fan-card fan-card-3 absolute w-56 h-72 bg-paper text-ink rounded-md shadow-2xl p-5 rotate-6 translate-x-2">
-          <p class="mono-chip text-[10px] uppercase text-orchid">Ulang Tahun</p>
-          <p class="font-display text-lg mt-2 leading-snug">David's 25th<br>Neon Night</p>
-          <div class="mt-6 border-t border-ink/10 pt-3">
-            <p class="mono-chip text-[10px] text-ink/50">david25th.eventlogix.id</p>
+        <!-- Card 2: Corporate -->
+        <a href="demo.html?theme=corporate" class="fan-card fan-card-2 absolute w-60 h-80 bg-paper text-ink rounded-lg shadow-2xl p-6 z-20 border border-ink/5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-ink/10 pb-2">
+              <p class="mono-chip text-[10px] uppercase font-bold text-mist tracking-wider">Template Konferensi</p>
+              <span class="w-1.5 h-1.5 rounded-full bg-mist"></span>
+            </div>
+            <p class="font-display text-xl mt-4 font-bold leading-tight">Tech Innovate<br><span class="text-mist">Conference 2026</span></p>
+            <p class="text-xs text-ink/60 mt-3 font-medium">Sasono Utomo, Jakarta</p>
           </div>
-        </div>
+          <div>
+            <div class="border-t border-ink/10 pt-3 flex items-center justify-between">
+              <p class="mono-chip text-[9px] text-ink/40 font-medium">techconf2026.eventlogix.id</p>
+              <span class="text-mist font-bold text-xs">Pilih →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Birthday -->
+        <a href="demo.html?theme=birthday" class="fan-card fan-card-3 absolute w-60 h-80 bg-paper text-ink rounded-lg shadow-2xl p-6 rotate-8 translate-x-4 border border-ink/5 flex flex-col justify-between z-10">
+          <div>
+            <div class="flex items-center justify-between border-b border-ink/10 pb-2">
+              <p class="mono-chip text-[10px] uppercase font-bold text-orchid tracking-wider">Template Ulang Tahun</p>
+              <span class="w-1.5 h-1.5 rounded-full bg-orchid"></span>
+            </div>
+            <p class="font-display text-xl mt-4 font-bold leading-tight">David's 25th<br><span class="text-orchid">Neon Light Party</span></p>
+            <p class="text-xs text-ink/60 mt-3 font-medium">Club Vibe, 21:00 WIB</p>
+          </div>
+          <div>
+            <div class="border-t border-ink/10 pt-3 flex items-center justify-between">
+              <p class="mono-chip text-[9px] text-ink/40 font-medium">david25th.eventlogix.id</p>
+              <span class="text-orchid font-bold text-xs">Pilih →</span>
+            </div>
+          </div>
+        </a>
       </div>
 
     </div>
@@ -227,94 +332,128 @@
 
   <!-- ===================== FEATURES ===================== -->
   <section id="fitur" class="border-b border-ink-line">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-24">
-      <p class="mono-chip text-xs uppercase text-brass mb-3">Arsitektur Sistem</p>
-      <h2 class="font-display text-3xl sm:text-4xl text-paper max-w-2xl">
-        Dibangun untuk skala, didesain untuk setiap acara.
-      </h2>
-      <p class="text-paper/60 mt-4 max-w-xl">
-        Empat modul inti yang berjalan di balik setiap undangan — dari infrastruktur domain hingga check-in di lokasi acara.
-      </p>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+      <div class="max-w-3xl">
+        <p class="mono-chip text-xs uppercase text-brass mb-3 font-semibold">Arsitektur Sistem Premium</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-paper leading-tight">
+          Dirancang untuk performa tinggi, disesuaikan untuk setiap jenis acara.
+        </h2>
+        <p class="text-paper/60 mt-4 text-lg">
+          Empat modul inti yang berjalan di balik setiap undangan digital Anda — dari pengaturan domain instan hingga validasi check-in instan di lokasi acara.
+        </p>
+      </div>
 
-      <div class="grid sm:grid-cols-2 gap-6 mt-12">
+      <div class="grid md:grid-cols-2 gap-8 mt-16">
 
         <!-- Feature 1 -->
-        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
-          <div class="p-7 flex items-start justify-between gap-4">
+        <div class="bg-ink-soft border border-ink-line rounded-lg overflow-hidden group hover:border-brass/30 transition-colors flex flex-col justify-between">
+          <div class="p-8 flex items-start justify-between gap-6">
             <div>
-              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / Domain</p>
-              <h3 class="font-display text-xl text-paper">Multi-Tenant &amp; Domain Kustom</h3>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2 font-bold">Module 01 / Domain & Tenant</p>
+              <h3 class="font-display text-2xl text-paper font-semibold">Multi-Tenant &amp; Domain Kustom</h3>
               <p class="text-paper/60 mt-3 text-sm leading-relaxed">
-                Setiap event otomatis mendapat subdomain sendiri (<span class="mono-chip text-paper/80">namaevent.eventlogix.id</span>) begitu dibuat. Ingin pakai domain milik klien? Arahkan CNAME atau A Record, dan SSL terpasang otomatis — tanpa perlu tim IT.
+                Setiap event otomatis mendapat subdomain instan begitu dibuat. Ingin menggunakan domain ber-brand klien Anda? Cukup arahkan CNAME, dan sistem kami secara otomatis memasang SSL aman secara real-time.
               </p>
             </div>
-            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.5 3.6 5.6 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.6-3.6-9s1.2-6.5 3.6-9z"/>
-            </svg>
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-brass/5 border border-brass/20 flex items-center justify-center text-brass group-hover:bg-brass group-hover:text-ink transition-all">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>
+              </svg>
+            </div>
           </div>
-          <div class="perforated"></div>
-          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
-            CNAME · A Record · Auto-SSL
+          <div>
+            <div class="perforated"></div>
+            <div class="px-8 py-4 bg-ink/50 mono-chip text-[11px] uppercase text-paper/40 flex justify-between items-center">
+              <span>CNAME Mapping</span>
+              <span>•</span>
+              <span>Let's Encrypt Auto-SSL</span>
+              <span>•</span>
+              <span>Isolated DB Tenant</span>
+            </div>
           </div>
         </div>
 
         <!-- Feature 2 -->
-        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
-          <div class="p-7 flex items-start justify-between gap-4">
+        <div class="bg-ink-soft border border-ink-line rounded-lg overflow-hidden group hover:border-brass/30 transition-colors flex flex-col justify-between">
+          <div class="p-8 flex items-start justify-between gap-6">
             <div>
-              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / Theme</p>
-              <h3 class="font-display text-xl text-paper">Dynamic Theming Engine</h3>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2 font-bold">Module 02 / Template Engine</p>
+              <h3 class="font-display text-2xl text-paper font-semibold">Dynamic JSON Theming</h3>
               <p class="text-paper/60 mt-3 text-sm leading-relaxed">
-                Susun undangan dari blok modular — Hero, Galeri, Kisah, RSVP — lalu simpan strukturnya sebagai JSON. Satu mesin tampilan, kombinasi desain yang tidak terbatas untuk setiap jenis acara.
+                Susun tata letak undangan dengan blok modular (Hero, Galeri, Kisah Acara, RSVP, Penunjuk Peta). Seluruh konfigurasi disimpan dalam format JSON terstruktur. Kustomisasi font, warna, dan urutan seksi dengan mudah.
               </p>
             </div>
-            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="10" height="5" rx="1"/><rect x="4" y="18" width="16" height="2" rx="1"/>
-            </svg>
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-brass/5 border border-brass/20 flex items-center justify-center text-brass group-hover:bg-brass group-hover:text-ink transition-all">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/>
+              </svg>
+            </div>
           </div>
-          <div class="perforated"></div>
-          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
-            Block-based · JSON Schema
+          <div>
+            <div class="perforated"></div>
+            <div class="px-8 py-4 bg-ink/50 mono-chip text-[11px] uppercase text-paper/40 flex justify-between items-center">
+              <span>Dynamic Layout Block</span>
+              <span>•</span>
+              <span>JSON Config Schema</span>
+              <span>•</span>
+              <span>Google Fonts API</span>
+            </div>
           </div>
         </div>
 
         <!-- Feature 3 -->
-        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
-          <div class="p-7 flex items-start justify-between gap-4">
+        <div class="bg-ink-soft border border-ink-line rounded-lg overflow-hidden group hover:border-brass/30 transition-colors flex flex-col justify-between">
+          <div class="p-8 flex items-start justify-between gap-6">
             <div>
-              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / RSVP</p>
-              <h3 class="font-display text-xl text-paper">RSVP &amp; Manajemen Tamu yang Fleksibel</h3>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2 font-bold">Module 03 / RSVP Core</p>
+              <h3 class="font-display text-2xl text-paper font-semibold">RSVP &amp; Manajemen Tamu Fleksibel</h3>
               <p class="text-paper/60 mt-3 text-sm leading-relaxed">
-                Form RSVP tidak kaku. Tambah atau kurangi field — teks, pilihan, radio — sesuai kebutuhan acara: jumlah pax untuk pernikahan, dietary restriction untuk seminar, konfirmasi after-party untuk ulang tahun.
+                Form RSVP adaptif. Anda dapat menambahkan field input kustom (jumlah tamu tambahan, pantangan makanan, preferensi sesi seminar) berdasarkan skema metadata dinamis (Entity-Attribute-Value).
               </p>
             </div>
-            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/>
-            </svg>
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-brass/5 border border-brass/20 flex items-center justify-center text-brass group-hover:bg-brass group-hover:text-ink transition-all">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
           </div>
-          <div class="perforated"></div>
-          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
-            EAV-based · Text · Select · Radio
+          <div>
+            <div class="perforated"></div>
+            <div class="px-8 py-4 bg-ink/50 mono-chip text-[11px] uppercase text-paper/40 flex justify-between items-center">
+              <span>EAV Schema</span>
+              <span>•</span>
+              <span>Custom Field Input</span>
+              <span>•</span>
+              <span>Instant Notification</span>
+            </div>
           </div>
         </div>
 
         <!-- Feature 4 -->
-        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
-          <div class="p-7 flex items-start justify-between gap-4">
+        <div class="bg-ink-soft border border-ink-line rounded-lg overflow-hidden group hover:border-brass/30 transition-colors flex flex-col justify-between">
+          <div class="p-8 flex items-start justify-between gap-6">
             <div>
-              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / Check-in</p>
-              <h3 class="font-display text-xl text-paper">Tautan &amp; QR Code per Tamu</h3>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2 font-bold">Module 04 / Gateway &amp; Check-in</p>
+              <h3 class="font-display text-2xl text-paper font-semibold">Tautan Personal &amp; QR Code</h3>
               <p class="text-paper/60 mt-3 text-sm leading-relaxed">
-                Setiap tamu menerima tautan personal (<span class="mono-chip text-paper/80">?to=Nama+Tamu</span>) lengkap dengan QR Code uniknya sendiri — siap dipakai untuk proses check-in yang cepat dan akurat di lokasi acara.
+                Tamu menerima tautan unik yang mempersonalisasi konten undangan di browser mereka. Dilengkapi QR Code bawaan untuk dipindai oleh panitia di lokasi guna verifikasi kehadiran secepat 0.8 detik.
               </p>
             </div>
-            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h3v3h3v3h-6z"/>
-            </svg>
+            <div class="shrink-0 w-12 h-12 rounded-lg bg-brass/5 border border-brass/20 flex items-center justify-center text-brass group-hover:bg-brass group-hover:text-ink transition-all">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><line x1="7" y1="17" x2="7" y2="17.01"/><line x1="17" y1="17" x2="17" y2="17.01"/><line x1="17" y1="7" x2="17" y2="7.01"/>
+              </svg>
+            </div>
           </div>
-          <div class="perforated"></div>
-          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
-            Personalized Link · QR Check-in
+          <div>
+            <div class="perforated"></div>
+            <div class="px-8 py-4 bg-ink/50 mono-chip text-[11px] uppercase text-paper/40 flex justify-between items-center">
+              <span>Personalized URL Query</span>
+              <span>•</span>
+              <span>QR Code API</span>
+              <span>•</span>
+              <span>Mobile Scanner Portal</span>
+            </div>
           </div>
         </div>
 
@@ -323,69 +462,86 @@
   </section>
 
   <!-- ===================== DEMO / SAMPLE SHOWCASE ===================== -->
-  <section id="demo" class="border-b border-ink-line bg-ink-soft/40">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-24">
-      <p class="mono-chip text-xs uppercase text-brass mb-3">Lihat Sendiri</p>
-      <h2 class="font-display text-3xl sm:text-4xl text-paper max-w-2xl">
-        Tiga jenis acara, satu mesin yang sama.
-      </h2>
-      <p class="text-paper/60 mt-4 max-w-xl">
-        Klik salah satu tiket di bawah untuk membuka contoh undangan lengkap dengan RSVP-nya.
-      </p>
+  <section id="demo" class="border-b border-ink-line bg-ink-soft/30">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="mono-chip text-xs uppercase text-brass mb-3 font-semibold">Uji Coba Langsung</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-paper">
+          Tiga jenis acara, satu mesin yang sama.
+        </h2>
+        <p class="text-paper/60 mt-4 text-base">
+          Klik salah satu tiket demo di bawah untuk membuka simulasi interaktif yang sudah disesuaikan dengan jenis event Anda.
+        </p>
+      </div>
 
-      <div class="grid md:grid-cols-3 gap-6 mt-12">
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
 
         <!-- Sample 1: Wedding -->
-        <a href="/sample/demo1" class="group block bg-paper text-ink rounded-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
-          <div class="p-6">
-            <p class="mono-chip text-[10px] uppercase text-clay">Pernikahan · Serif · Klasik</p>
-            <h3 class="font-display text-2xl mt-3">The Wedding of Alice &amp; Bob</h3>
-            <p class="text-ink/60 text-sm mt-3 leading-relaxed">
-              Desain elegan dengan tipografi serif, RSVP konfirmasi kehadiran lengkap dengan jumlah pax bawaan.
+        <a href="demo.html?theme=wedding" class="group block bg-paper text-ink rounded-lg overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-clay/20 flex flex-col justify-between">
+          <div class="p-8">
+            <div class="flex justify-between items-center border-b border-ink/10 pb-4 mb-4">
+              <span class="mono-chip text-[10px] uppercase font-bold text-clay tracking-wider">Pernikahan · Classic Serif</span>
+              <span class="w-2 h-2 rounded-full bg-clay"></span>
+            </div>
+            <h3 class="font-display text-2xl font-bold leading-tight group-hover:text-clay transition-colors">The Wedding of Alice &amp; Bob</h3>
+            <p class="text-ink/75 text-sm mt-3 leading-relaxed">
+              Tampilan elegan klasik dengan font serif Fraunces. Form RSVP khusus mencakup pertanyaan kehadiran, jumlah pax tamu, ucapan selamat, dan preferensi menginap.
             </p>
           </div>
-          <div class="perforated-paper"></div>
-          <div class="px-6 py-4 flex items-center justify-between">
-            <span class="mono-chip text-[10px] text-ink/50">RSVP: Kehadiran + Pax</span>
-            <span class="text-clay font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-              Lihat Demo →
-            </span>
+          <div>
+            <div class="perforated-paper"></div>
+            <div class="px-8 py-5 flex items-center justify-between bg-paper-dim/40">
+              <span class="mono-chip text-[10px] text-ink/50 font-semibold">RSVP: Kehadiran + Jumlah Pax</span>
+              <span class="text-clay font-bold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                Buka Demo →
+              </span>
+            </div>
           </div>
         </a>
 
         <!-- Sample 2: Corporate -->
-        <a href="/sample/demo2" class="group block bg-paper text-ink rounded-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
-          <div class="p-6">
-            <p class="mono-chip text-[10px] uppercase text-mist">Korporat · Clean · Profesional</p>
-            <h3 class="font-display text-2xl mt-3">Tech Conference 2026</h3>
-            <p class="text-ink/60 text-sm mt-3 leading-relaxed">
-              Desain bersih dan profesional, form RSVP dinamis meminta input nama instansi dan dietary restriction.
+        <a href="demo.html?theme=corporate" class="group block bg-paper text-ink rounded-lg overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-mist/20 flex flex-col justify-between">
+          <div class="p-8">
+            <div class="flex justify-between items-center border-b border-ink/10 pb-4 mb-4">
+              <span class="mono-chip text-[10px] uppercase font-bold text-mist tracking-wider">Korporat · Modern Clean</span>
+              <span class="w-2 h-2 rounded-full bg-mist"></span>
+            </div>
+            <h3 class="font-display text-2xl font-bold leading-tight group-hover:text-mist transition-colors">Tech Conference 2026</h3>
+            <p class="text-ink/75 text-sm mt-3 leading-relaxed">
+              Desain modern minimalis yang bersih. Form RSVP meminta nama perusahaan/instansi, email korporasi, serta pilihan dietary restriction (pantangan makanan).
             </p>
           </div>
-          <div class="perforated-paper"></div>
-          <div class="px-6 py-4 flex items-center justify-between">
-            <span class="mono-chip text-[10px] text-ink/50">RSVP: Instansi + Dietary</span>
-            <span class="text-mist font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-              Lihat Demo →
-            </span>
+          <div>
+            <div class="perforated-paper"></div>
+            <div class="px-8 py-5 flex items-center justify-between bg-paper-dim/40">
+              <span class="mono-chip text-[10px] text-ink/50 font-semibold">RSVP: Instansi + Dietary</span>
+              <span class="text-mist font-bold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                Buka Demo →
+              </span>
+            </div>
           </div>
         </a>
 
         <!-- Sample 3: Birthday -->
-        <a href="/sample/demo3" class="group block bg-paper text-ink rounded-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
-          <div class="p-6">
-            <p class="mono-chip text-[10px] uppercase text-orchid">Ulang Tahun · Grid · Neon</p>
-            <h3 class="font-display text-2xl mt-3">David's 25th Neon Night</h3>
-            <p class="text-ink/60 text-sm mt-3 leading-relaxed">
-              Penuh warna dengan layout grid modern, form RSVP kustom untuk konfirmasi kedatangan sesi after-party.
+        <a href="demo.html?theme=birthday" class="group block bg-paper text-ink rounded-lg overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-orchid/20 flex flex-col justify-between">
+          <div class="p-8">
+            <div class="flex justify-between items-center border-b border-ink/10 pb-4 mb-4">
+              <span class="mono-chip text-[10px] uppercase font-bold text-orchid tracking-wider">Ulang Tahun · Neon Grid</span>
+              <span class="w-2 h-2 rounded-full bg-orchid"></span>
+            </div>
+            <h3 class="font-display text-2xl font-bold leading-tight group-hover:text-orchid transition-colors">David's 25th Neon Night</h3>
+            <p class="text-ink/75 text-sm mt-3 leading-relaxed">
+              Visual retro cyber neon dengan grid modern. RSVP yang menyertakan pertanyaan kehadiran After-Party dan pilihan minuman/snack favorit tamu.
             </p>
           </div>
-          <div class="perforated-paper"></div>
-          <div class="px-6 py-4 flex items-center justify-between">
-            <span class="mono-chip text-[10px] text-ink/50">RSVP: Sesi After-Party</span>
-            <span class="text-orchid font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-              Lihat Demo →
-            </span>
+          <div>
+            <div class="perforated-paper"></div>
+            <div class="px-8 py-5 flex items-center justify-between bg-paper-dim/40">
+              <span class="mono-chip text-[10px] text-ink/50 font-semibold">RSVP: Sesi After-Party + Minuman</span>
+              <span class="text-orchid font-bold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                Buka Demo →
+              </span>
+            </div>
           </div>
         </a>
 
@@ -393,54 +549,243 @@
     </div>
   </section>
 
+  <!-- ===================== PRICING SECTION ===================== -->
+  <section id="pricing" class="border-b border-ink-line">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="mono-chip text-xs uppercase text-brass mb-3 font-semibold">Paket Harga</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-paper">
+          Skema harga sederhana untuk segala skala.
+        </h2>
+        <p class="text-paper/60 mt-4 text-base">
+          Dapatkan akses awal gratis untuk mendaftar waitlist hari ini, dan kunci diskon seumur hidup saat sistem berbayar diluncurkan.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-16">
+
+        <!-- Plan 1: Early Access Free -->
+        <div class="bg-ink-soft border-2 border-brass rounded-lg p-8 relative flex flex-col justify-between shadow-2xl">
+          <div class="absolute top-0 right-6 -translate-y-1/2 bg-brass text-ink text-xs font-bold px-3 py-1 rounded-full uppercase mono-chip">
+            Aktif Sekarang
+          </div>
+          <div>
+            <p class="mono-chip text-xs uppercase text-brass font-bold mb-1">Early Bird Waitlist</p>
+            <h3 class="text-2xl font-display font-semibold text-paper">Gratis Akses Awal</h3>
+            <p class="text-paper/50 text-sm mt-2">Daftar sekarang untuk menguji coba dashboard dan fitur secara penuh.</p>
+            <div class="mt-6 flex items-baseline gap-1 text-paper">
+              <span class="text-4xl font-display font-bold">Rp0</span>
+              <span class="text-sm text-paper/40">/ 2 bulan (akan reset setiap 2 bulan)</span>
+            </div>
+            <ul class="mt-8 space-y-4 text-sm text-paper/80">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brass shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                1 Subdomain generated
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brass shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Custom Domain (Simulasi)
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brass shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Template Undangan &amp; JSON Editor (simulator)
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brass shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Hingga 30 RSVP per event
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brass shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Check-in QR Code (Simulator Dashboard)
+              </li>
+            </ul>
+          </div>
+          <a href="#cta" class="mt-8 block w-full bg-brass hover:bg-brass-dim text-ink font-bold text-center py-3 rounded transition-colors">
+            Gabung Akses Awal
+          </a>
+        </div>
+
+        <!-- Plan 2: Pro Event Organizer -->
+        <div class="bg-ink-soft/40 border border-ink-line rounded-lg p-8 flex flex-col justify-between">
+          <div>
+            <p class="mono-chip text-xs uppercase text-paper/50 font-bold mb-1">Coming Soon</p>
+            <h3 class="text-2xl font-display font-semibold text-paper/70">Pro Event Organizer</h3>
+            <p class="text-paper/40 text-sm mt-2">Dirancang khusus untuk agensi EO dengan kebutuhan kustomisasi penuh.</p>
+            <div class="mt-6 flex items-baseline gap-1 text-paper/50">
+              <span class="text-4xl font-display font-bold">Rp.....k</span>
+              <span class="text-sm text-paper/40">/ bulan</span>
+            </div>
+            <ul class="mt-8 space-y-4 text-sm text-paper/50">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-paper/30 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                All Features in Early Access + JSON Editor
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-paper/30 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Unlimited Active Events &amp; 3 subdomain custom
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-paper/30 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Custom Domain Asli + Auto-SSL Aktif
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-paper/30 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Hapus Watermark eventlogix.id
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-paper/30 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                Unlimited RSVP + Export Data Excel / CSV
+              </li>
+            </ul>
+          </div>
+          <button disabled class="mt-8 w-full border border-ink-line text-paper/30 font-bold py-3 rounded cursor-not-allowed">
+            Segera Hadir
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ SECTION ===================== -->
+  <section id="faq" class="border-b border-ink-line bg-ink-soft/20">
+    <div class="max-w-4xl mx-auto px-6 py-20 lg:py-28">
+      <div class="text-center mb-16">
+        <p class="mono-chip text-xs uppercase text-brass mb-3 font-semibold">Tanya Jawab</p>
+        <h2 class="font-display text-3xl sm:text-4xl text-paper">
+          Pertanyaan Yang Sering Diajukan
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="border border-ink-line rounded-lg bg-ink-soft/40 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between hover:bg-ink-soft/80 transition-colors">
+            <span class="font-display font-medium text-lg text-paper">Bagaimana sistem multi-tenant di eventlogix.id bekerja?</span>
+            <svg class="w-5 h-5 text-brass transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-6 text-sm text-paper/70 leading-relaxed border-t border-ink-line/30 pt-4">
+              Setiap kali Anda membuat acara baru di eventlogix.id, sistem kami mengalokasikan entri tenant baru secara virtual. Hal ini memberikan subdomain unik (seperti <code>namaevent.eventlogix.id</code>) yang langsung mengarah ke konfigurasi JSON tersendiri yang mengisolasi data tamu dan form RSVP dari acara lainnya.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-ink-line rounded-lg bg-ink-soft/40 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between hover:bg-ink-soft/80 transition-colors">
+            <span class="font-display font-medium text-lg text-paper">Apakah saya benar-benar bisa menggunakan domain custom milik klien?</span>
+            <svg class="w-5 h-5 text-brass transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-6 text-sm text-paper/70 leading-relaxed border-t border-ink-line/30 pt-4">
+              Ya. Cukup instruksikan klien Anda untuk menambahkan entri CNAME di manajemen DNS domain mereka (misal: mengarahkan <code>undangan.nikah-alicebob.com</code> ke CNAME <code>tenant.eventlogix.id</code>). Begitu diarahkan, sistem reverse-proxy kami akan mendeteksi permintaan baru dan memasang sertifikat SSL dari Let's Encrypt secara otomatis dalam beberapa menit.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-ink-line rounded-lg bg-ink-soft/40 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between hover:bg-ink-soft/80 transition-colors">
+            <span class="font-display font-medium text-lg text-paper">Apa itu Dynamic JSON Theming?</span>
+            <svg class="w-5 h-5 text-brass transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-6 text-sm text-paper/70 leading-relaxed border-t border-ink-line/30 pt-4">
+              Alih-alih menyusun kode HTML/CSS manual yang rumit untuk setiap acara, sistem kami mendefinisikan undangan dalam skema JSON. Skema ini menentukan komponen apa saja yang muncul (misalnya: Cover, Galeri Foto, Informasi Waktu, Form RSVP) beserta parameter warna dan font. Hal ini memungkinkan Anda untuk merancang ulang tata letak dalam hitungan detik tanpa risiko mematahkan fungsionalitas RSVP atau check-in.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-ink-line rounded-lg bg-ink-soft/40 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between hover:bg-ink-soft/80 transition-colors">
+            <span class="font-display font-medium text-lg text-paper">Bagaimana cara kerja check-in dengan QR Code di lokasi?</span>
+            <svg class="w-5 h-5 text-brass transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 pb-6 text-sm text-paper/70 leading-relaxed border-t border-ink-line/30 pt-4">
+              Setiap tamu yang terdaftar di sistem akan mendapatkan tautan undangan personal yang unik. Di dalam undangan tersebut terdapat kode QR individual. Saat acara berlangsung, panitia EO dapat memindai kode QR tamu menggunakan portal scanner mobile kami dari browser HP mereka. Sistem akan secara real-time memverifikasi nama, mencatat status check-in, dan memvalidasi jika QR Code tersebut sudah pernah dipakai sebelumnya.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== CTA BOTTOM / WAITLIST ===================== -->
   <section id="cta" class="relative">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10 py-20 lg:py-28 text-center">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10 py-24 lg:py-32 text-center relative z-10">
 
-      <svg class="w-14 h-14 mx-auto mb-6 text-brass" viewBox="0 0 64 64" fill="none">
-        <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M20 40 L32 20 L44 40 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <svg class="w-16 h-16 mx-auto mb-8 text-brass" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2"/>
+        <path d="M20 40 L32 20 L44 40 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
       </svg>
 
-      <h2 class="font-display text-3xl sm:text-4xl text-paper">
-        Jadi Event Organizer pertama yang coba eventlogix.id
+      <h2 class="font-display text-4xl sm:text-5xl text-paper max-w-2xl mx-auto leading-tight">
+        Jadilah Event Organizer Pertama Yang Menggunakannya.
       </h2>
-      <p class="text-paper/60 mt-4 max-w-xl mx-auto">
-        Daftar waitlist untuk akses awal, atau langsung masuk dan mulai bikin undangan pertamamu hari ini.
+      <p class="text-paper/60 mt-4 text-lg max-w-xl mx-auto">
+        Kunci akses gratis ke dashboard versi Beta dan nikmati pembuatan undangan tanpa batas hari ini.
       </p>
 
-      <form class="mt-9 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="#" method="post">
+      <form class="mt-10 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Terima kasih! Email Anda telah terdaftar dalam sistem waitlist kami.'); this.reset();">
         <label for="waitlist-email" class="sr-only">Alamat email</label>
         <input
           id="waitlist-email"
           type="email"
           required
           placeholder="nama@eventorganizer.com"
-          class="flex-1 bg-ink-soft border border-ink-line rounded-sm px-4 py-3 text-sm text-paper placeholder:text-paper/40 outline-none focus:border-brass"
+          class="flex-1 bg-ink-soft border border-ink-line rounded px-4 py-3 text-sm text-paper placeholder:text-paper/40 outline-none focus:border-brass transition-colors"
         >
-        <button type="submit" class="bg-brass hover:bg-brass-dim text-ink font-semibold text-sm px-6 py-3 rounded-sm transition-colors whitespace-nowrap">
-          Daftar Waitlist
+        <button type="submit" class="bg-brass hover:bg-brass-dim text-ink font-bold text-sm px-8 py-3.5 rounded transition-colors whitespace-nowrap shadow-lg shadow-brass/10">
+          Gabung Waitlist Sekarang
         </button>
       </form>
 
-      <div class="flex items-center gap-3 max-w-md mx-auto mt-6">
+      <div class="flex items-center gap-3 max-w-md mx-auto mt-8">
         <span class="flex-1 h-px bg-ink-line"></span>
-        <span class="mono-chip text-[11px] uppercase text-paper/40">atau</span>
+        <span class="mono-chip text-[11px] uppercase text-paper/40">atau coba simulatornya</span>
         <span class="flex-1 h-px bg-ink-line"></span>
       </div>
 
-      <button type="button" class="mt-6 inline-flex items-center gap-3 border border-paper/20 hover:border-brass rounded-sm px-6 py-3 text-sm font-semibold text-paper transition-colors">
-        <svg class="w-4 h-4" viewBox="0 0 18 18">
-          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84c-.21 1.13-.85 2.09-1.81 2.73v2.27h2.92c1.7-1.57 2.69-3.88 2.69-6.64z"/>
-          <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.27c-.81.54-1.84.87-3.04.87-2.34 0-4.32-1.58-5.03-3.71H.96v2.33C2.44 15.98 5.48 18 9 18z"/>
-          <path fill="#FBBC05" d="M3.97 10.71A5.4 5.4 0 0 1 3.68 9c0-.6.1-1.18.29-1.71V4.96H.96A8.99 8.99 0 0 0 0 9c0 1.45.35 2.83.96 4.04l3.01-2.33z"/>
-          <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.42 0 9 0 5.48 0 2.44 2.02.96 4.96l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/>
+      <a href="demo.html" class="mt-6 inline-flex items-center gap-3 border border-paper/20 hover:border-brass rounded px-8 py-4 text-sm font-semibold text-paper transition-colors bg-ink-soft/40 backdrop-blur-sm">
+        <svg class="w-5 h-5 text-brass" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
         </svg>
-        Mulai Buat Undangan dengan Google
-      </button>
+        Buka Dashboard Demo Interaktif
+      </a>
 
-      <p class="mono-chip text-[10px] uppercase text-paper/30 mt-8">
-        Akses Awal · Tanpa Kartu Kredit · Batalkan Kapan Saja
+      <p class="mono-chip text-[10px] uppercase text-paper/30 mt-10 tracking-wider">
+        Beta Early Access · Tanpa Biaya Tersembunyi · Batalkan Kapan Saja
       </p>
     </div>
   </section>
@@ -448,12 +793,85 @@
 </main>
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="border-t border-ink-line">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-paper/40">
-    <span class="font-display text-paper/70">eventlogix<span class="text-brass">.id</span></span>
-    <p>© 2026 eventlogix.id — Platform Undangan Digital untuk Event Organizer.</p>
+<footer class="border-t border-ink-line bg-ink-soft/60 relative z-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-12 gap-10 text-sm">
+    <div class="md:col-span-5">
+      <a href="#" class="font-display text-2xl tracking-tight text-paper flex items-center gap-2 mb-4">
+        <svg class="w-6 h-6 text-brass" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="3"/>
+          <path d="M20 40 L32 20 L44 40 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+        </svg>
+        <span>eventlogix<span class="text-brass">.id</span></span>
+      </a>
+      <p class="text-paper/60 leading-relaxed max-w-sm mb-6">
+        Platform SaaS multi-tenant untuk Event Organizer. Kelola ribuan undangan digital dengan subdomain instan, custom domain, dynamic theming JSON, RSVP fleksibel, dan validasi QR Code check-in.
+      </p>
+    </div>
+
+    <div class="md:col-span-2">
+      <h4 class="mono-chip text-xs uppercase text-paper/40 font-bold mb-4 tracking-wider">Navigasi</h4>
+      <ul class="space-y-2.5">
+        <li><a href="#fitur" class="text-paper/70 hover:text-brass transition-colors">Fitur Utama</a></li>
+        <li><a href="#demo" class="text-paper/70 hover:text-brass transition-colors">Demo Sampel</a></li>
+        <li><a href="#pricing" class="text-paper/70 hover:text-brass transition-colors">Paket Harga</a></li>
+        <li><a href="#faq" class="text-paper/70 hover:text-brass transition-colors">Tanya Jawab</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <h4 class="mono-chip text-xs uppercase text-paper/40 font-bold mb-4 tracking-wider">Demo Live</h4>
+      <ul class="space-y-2.5">
+        <li><a href="demo.html?theme=wedding" class="text-paper/70 hover:text-brass transition-colors">Undangan Pernikahan</a></li>
+        <li><a href="demo.html?theme=corporate" class="text-paper/70 hover:text-brass transition-colors">Konferensi Korporat</a></li>
+        <li><a href="demo.html?theme=birthday" class="text-paper/70 hover:text-brass transition-colors">Pesta Ulang Tahun</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-3">
+      <h4 class="mono-chip text-xs uppercase text-paper/40 font-bold mb-4 tracking-wider">Hubungi Kami</h4>
+      <p class="text-paper/60 leading-relaxed mb-3">Ada pertanyaan seputar integrasi CNAME atau custom project?</p>
+      <a href="mailto:info@eventlogix.id" class="text-brass hover:underline font-medium">info@eventlogix.id</a>
+    </div>
+  </div>
+
+  <div class="border-t border-ink-line/50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-paper/40">
+      <p>© 2026 eventlogix.id — Platform Undangan Digital & RSVP Pintar untuk Event Organizer. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-paper transition-colors">Kebijakan Privasi</a>
+        <span>·</span>
+        <a href="#" class="hover:text-paper transition-colors">Syarat & Ketentuan</a>
+      </div>
+    </div>
   </div>
 </footer>
+
+<script>
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const svg = button.querySelector('svg');
+
+    // Toggle maxHeight for smooth transition
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      content.style.maxHeight = '0px';
+      svg.classList.remove('rotate-180');
+    } else {
+      // Close other open FAQs first (optional, but clean)
+      document.querySelectorAll('#faq > div').forEach(item => {
+        const otherBtn = item.querySelector('button');
+        const otherContent = item.querySelector('div.overflow-hidden');
+        const otherSvg = item.querySelector('svg');
+        if (otherContent && otherContent !== content) {
+          otherContent.style.maxHeight = '0px';
+          if (otherSvg) otherSvg.classList.remove('rotate-180');
+        }
+      });
+
+      content.style.maxHeight = content.scrollHeight + 'px';
+      svg.classList.add('rotate-180');
+    }
+  }
+</script>
 
 </body>
 </html>
