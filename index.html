@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===================== PRIMARY SEO ===================== -->
+<title>eventlogix.id — Platform SaaS Undangan Digital & RSVP Pintar untuk Event Organizer</title>
+<meta name="description" content="eventlogix.id adalah platform SaaS multi-tenant untuk Event Organizer: subdomain instan, domain kustom dengan Auto-SSL, dynamic theming berbasis JSON, RSVP fleksibel, dan QR Code check-in per tamu.">
+<meta name="keywords" content="undangan digital, undangan online, platform undangan, SaaS event organizer, RSVP digital, RSVP pintar, custom domain undangan, subdomain event, QR code check-in, multi-tenant invitation platform, eventlogix">
+<meta name="author" content="eventlogix.id">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="language" content="Indonesian">
+<link rel="canonical" href="https://eventlogix.id/">
+<meta name="theme-color" content="#14171F">
+
+<!-- ===================== FAVICON (inline seal mark) ===================== -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2314171F'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23C8A24A' stroke-width='2'/%3E%3Cpath d='M20 40 L32 20 L44 40 Z' fill='none' stroke='%23C8A24A' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- ===================== OPEN GRAPH (Facebook, WhatsApp, LinkedIn, dll) ===================== -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eventlogix.id/">
+<meta property="og:site_name" content="eventlogix.id">
+<meta property="og:locale" content="id_ID">
+<meta property="og:title" content="eventlogix.id — Dynamic Invitations. Seamless RSVP. Tailored for Every Event.">
+<meta property="og:description" content="Platform SaaS undangan digital untuk Event Organizer: subdomain instan, domain kustom Auto-SSL, dynamic theming JSON, RSVP fleksibel, dan QR Code check-in per tamu.">
+<meta property="og:image" content="https://eventlogix.id/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="eventlogix.id — Platform SaaS Undangan Digital untuk Event Organizer">
+
+<!-- ===================== TWITTER / X CARD ===================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="eventlogix.id — Dynamic Invitations. Seamless RSVP.">
+<meta name="twitter:description" content="Satu platform, subdomain tak terbatas. Setiap acara punya identitas undangan dan RSVP-nya sendiri.">
+<meta name="twitter:image" content="https://eventlogix.id/assets/og-cover.jpg">
+<meta name="twitter:image:alt" content="eventlogix.id — Platform SaaS Undangan Digital untuk Event Organizer">
+
+<!-- ===================== STRUCTURED DATA (JSON-LD) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "eventlogix.id",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://eventlogix.id/",
+  "description": "Platform SaaS multi-tenant untuk undangan digital dan RSVP, dirancang untuk Event Organizer. Mendukung subdomain instan, domain kustom dengan Auto-SSL, dynamic theming berbasis JSON, form RSVP dinamis, serta QR Code check-in per tamu.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "IDR",
+    "description": "Waitlist akses awal / early-bird"
+  }
+}
+</script>
+
+<!-- ===================== FONTS ===================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ===================== TAILWIND (CDN) ===================== -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    { DEFAULT: '#14171F', soft: '#1C212C', line: '#2A2F3B' },
+          paper:  { DEFAULT: '#F7F4ED', dim: '#EDE8DB' },
+          brass:  { DEFAULT: '#C8A24A', dim: '#8C7235' },
+          clay:   '#B6573D',
+          mist:   '#4F7A72',
+          orchid: '#8B5FBF'
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #14171F; }
+
+  /* Perforated ticket-stub edge */
+  .perforated {
+    background-image: radial-gradient(circle, #14171F 2.5px, transparent 2.6px);
+    background-size: 16px 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    height: 6px;
+  }
+  .perforated-paper {
+    background-image: radial-gradient(circle, #F7F4ED 2.5px, transparent 2.6px);
+    background-size: 16px 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    height: 6px;
+  }
+
+  /* Signature hero: fanned invitation cards */
+  .fan-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-origin: bottom center;
+  }
+  .fan-wrap:hover .fan-card-1 { transform: rotate(-14deg) translateX(-18px) translateY(-6px); }
+  .fan-wrap:hover .fan-card-2 { transform: rotate(0deg) translateY(-14px); }
+  .fan-wrap:hover .fan-card-3 { transform: rotate(14deg) translateX(18px) translateY(-6px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fan-card { transition: none; }
+    .fan-wrap:hover .fan-card-1,
+    .fan-wrap:hover .fan-card-2,
+    .fan-wrap:hover .fan-card-3 { transform: none; }
+  }
+
+  /* Visible keyboard focus across the page */
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid #C8A24A;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .mono-chip {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+</style>
+</head>
+
+<body class="font-body text-paper antialiased">
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur-md border-b border-ink-line">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <a href="#" class="font-display text-xl tracking-tight text-paper">
+      eventlogix<span class="text-brass">.id</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#fitur" class="text-paper/80 hover:text-brass transition-colors">Fitur</a>
+      <a href="#demo" class="text-paper/80 hover:text-brass transition-colors">Demo Sampel</a>
+      <span class="flex items-center gap-1.5 text-paper/40 cursor-default">
+        Harga
+        <span class="mono-chip text-[10px] uppercase bg-ink-soft border border-ink-line px-1.5 py-0.5 rounded-sm text-brass/70">Segera</span>
+      </span>
+    </div>
+
+    <a href="#cta" class="bg-brass hover:bg-brass-dim text-ink font-semibold text-sm px-5 py-2.5 rounded-sm transition-colors">
+      Mulai Buat Undangan
+    </a>
+  </nav>
+</header>
+
+<main class="pt-16">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="relative overflow-hidden border-b border-ink-line">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <p class="mono-chip text-xs uppercase text-brass mb-5">
+          Platform SaaS Undangan Digital · Khusus Event Organizer
+        </p>
+
+        <h1 class="font-display font-medium text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-paper">
+          Satu Platform Inti.
+          <span class="block italic text-brass">Ribuan Identitas Undangan.</span>
+        </h1>
+
+        <p class="mt-6 text-paper/70 text-lg leading-relaxed max-w-xl">
+          Setiap acara mendapat subdomain instan di <span class="mono-chip text-paper">eventlogix.id</span>, bisa dipindahkan ke domain milik klien lewat satu kali pengaturan CNAME, dan form RSVP yang menyesuaikan bentuknya sendiri — pernikahan, seminar, atau pesta ulang tahun, dijalankan oleh mesin yang sama.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-6">
+          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft text-paper/60 px-2.5 py-1 rounded-sm">Auto-SSL</span>
+          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft text-paper/60 px-2.5 py-1 rounded-sm">JSON Theme Engine</span>
+          <span class="mono-chip text-[11px] uppercase border border-ink-line bg-ink-soft text-paper/60 px-2.5 py-1 rounded-sm">Multi-Tenant</span>
+        </div>
+
+        <div class="flex flex-wrap gap-4 mt-9">
+          <a href="#demo" class="bg-brass hover:bg-brass-dim text-ink font-semibold px-6 py-3.5 rounded-sm transition-colors">
+            Coba Demo Gratis
+          </a>
+          <a href="#fitur" class="border border-paper/30 hover:border-brass hover:text-brass text-paper font-semibold px-6 py-3.5 rounded-sm transition-colors">
+            Pelajari Fitur
+          </a>
+        </div>
+      </div>
+
+      <!-- Signature element: fanned invitation/ticket cards -->
+      <div class="fan-wrap relative h-[420px] flex items-center justify-center select-none">
+        <div class="fan-card fan-card-1 absolute w-56 h-72 bg-paper text-ink rounded-md shadow-2xl p-5 -rotate-6 -translate-x-2">
+          <p class="mono-chip text-[10px] uppercase text-clay">Pernikahan</p>
+          <p class="font-display text-lg mt-2 leading-snug">The Wedding of<br>Alice &amp; Bob</p>
+          <div class="mt-6 border-t border-ink/10 pt-3">
+            <p class="mono-chip text-[10px] text-ink/50">alice-bob.eventlogix.id</p>
+          </div>
+        </div>
+
+        <div class="fan-card fan-card-2 absolute w-56 h-72 bg-paper text-ink rounded-md shadow-2xl p-5 z-10">
+          <p class="mono-chip text-[10px] uppercase text-mist">Korporat</p>
+          <p class="font-display text-lg mt-2 leading-snug">Tech Conference<br>2026</p>
+          <div class="mt-6 border-t border-ink/10 pt-3">
+            <p class="mono-chip text-[10px] text-ink/50">techconf2026.eventlogix.id</p>
+          </div>
+        </div>
+
+        <div class="fan-card fan-card-3 absolute w-56 h-72 bg-paper text-ink rounded-md shadow-2xl p-5 rotate-6 translate-x-2">
+          <p class="mono-chip text-[10px] uppercase text-orchid">Ulang Tahun</p>
+          <p class="font-display text-lg mt-2 leading-snug">David's 25th<br>Neon Night</p>
+          <div class="mt-6 border-t border-ink/10 pt-3">
+            <p class="mono-chip text-[10px] text-ink/50">david25th.eventlogix.id</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section id="fitur" class="border-b border-ink-line">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-24">
+      <p class="mono-chip text-xs uppercase text-brass mb-3">Arsitektur Sistem</p>
+      <h2 class="font-display text-3xl sm:text-4xl text-paper max-w-2xl">
+        Dibangun untuk skala, didesain untuk setiap acara.
+      </h2>
+      <p class="text-paper/60 mt-4 max-w-xl">
+        Empat modul inti yang berjalan di balik setiap undangan — dari infrastruktur domain hingga check-in di lokasi acara.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-6 mt-12">
+
+        <!-- Feature 1 -->
+        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
+          <div class="p-7 flex items-start justify-between gap-4">
+            <div>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / Domain</p>
+              <h3 class="font-display text-xl text-paper">Multi-Tenant &amp; Domain Kustom</h3>
+              <p class="text-paper/60 mt-3 text-sm leading-relaxed">
+                Setiap event otomatis mendapat subdomain sendiri (<span class="mono-chip text-paper/80">namaevent.eventlogix.id</span>) begitu dibuat. Ingin pakai domain milik klien? Arahkan CNAME atau A Record, dan SSL terpasang otomatis — tanpa perlu tim IT.
+              </p>
+            </div>
+            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.5 3.6 5.6 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.6-3.6-9s1.2-6.5 3.6-9z"/>
+            </svg>
+          </div>
+          <div class="perforated"></div>
+          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
+            CNAME · A Record · Auto-SSL
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
+          <div class="p-7 flex items-start justify-between gap-4">
+            <div>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / Theme</p>
+              <h3 class="font-display text-xl text-paper">Dynamic Theming Engine</h3>
+              <p class="text-paper/60 mt-3 text-sm leading-relaxed">
+                Susun undangan dari blok modular — Hero, Galeri, Kisah, RSVP — lalu simpan strukturnya sebagai JSON. Satu mesin tampilan, kombinasi desain yang tidak terbatas untuk setiap jenis acara.
+              </p>
+            </div>
+            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="10" height="5" rx="1"/><rect x="4" y="18" width="16" height="2" rx="1"/>
+            </svg>
+          </div>
+          <div class="perforated"></div>
+          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
+            Block-based · JSON Schema
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
+          <div class="p-7 flex items-start justify-between gap-4">
+            <div>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / RSVP</p>
+              <h3 class="font-display text-xl text-paper">RSVP &amp; Manajemen Tamu yang Fleksibel</h3>
+              <p class="text-paper/60 mt-3 text-sm leading-relaxed">
+                Form RSVP tidak kaku. Tambah atau kurangi field — teks, pilihan, radio — sesuai kebutuhan acara: jumlah pax untuk pernikahan, dietary restriction untuk seminar, konfirmasi after-party untuk ulang tahun.
+              </p>
+            </div>
+            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/>
+            </svg>
+          </div>
+          <div class="perforated"></div>
+          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
+            EAV-based · Text · Select · Radio
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-ink-soft border border-ink-line rounded-md overflow-hidden">
+          <div class="p-7 flex items-start justify-between gap-4">
+            <div>
+              <p class="mono-chip text-[11px] uppercase text-brass mb-2">Module / Check-in</p>
+              <h3 class="font-display text-xl text-paper">Tautan &amp; QR Code per Tamu</h3>
+              <p class="text-paper/60 mt-3 text-sm leading-relaxed">
+                Setiap tamu menerima tautan personal (<span class="mono-chip text-paper/80">?to=Nama+Tamu</span>) lengkap dengan QR Code uniknya sendiri — siap dipakai untuk proses check-in yang cepat dan akurat di lokasi acara.
+              </p>
+            </div>
+            <svg class="shrink-0 w-9 h-9 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M14 14h3v3h3v3h-6z"/>
+            </svg>
+          </div>
+          <div class="perforated"></div>
+          <div class="px-7 py-3 bg-ink mono-chip text-[10px] uppercase text-paper/40">
+            Personalized Link · QR Check-in
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEMO / SAMPLE SHOWCASE ===================== -->
+  <section id="demo" class="border-b border-ink-line bg-ink-soft/40">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-24">
+      <p class="mono-chip text-xs uppercase text-brass mb-3">Lihat Sendiri</p>
+      <h2 class="font-display text-3xl sm:text-4xl text-paper max-w-2xl">
+        Tiga jenis acara, satu mesin yang sama.
+      </h2>
+      <p class="text-paper/60 mt-4 max-w-xl">
+        Klik salah satu tiket di bawah untuk membuka contoh undangan lengkap dengan RSVP-nya.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-12">
+
+        <!-- Sample 1: Wedding -->
+        <a href="/sample/demo1" class="group block bg-paper text-ink rounded-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
+          <div class="p-6">
+            <p class="mono-chip text-[10px] uppercase text-clay">Pernikahan · Serif · Klasik</p>
+            <h3 class="font-display text-2xl mt-3">The Wedding of Alice &amp; Bob</h3>
+            <p class="text-ink/60 text-sm mt-3 leading-relaxed">
+              Desain elegan dengan tipografi serif, RSVP konfirmasi kehadiran lengkap dengan jumlah pax bawaan.
+            </p>
+          </div>
+          <div class="perforated-paper"></div>
+          <div class="px-6 py-4 flex items-center justify-between">
+            <span class="mono-chip text-[10px] text-ink/50">RSVP: Kehadiran + Pax</span>
+            <span class="text-clay font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+              Lihat Demo →
+            </span>
+          </div>
+        </a>
+
+        <!-- Sample 2: Corporate -->
+        <a href="/sample/demo2" class="group block bg-paper text-ink rounded-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
+          <div class="p-6">
+            <p class="mono-chip text-[10px] uppercase text-mist">Korporat · Clean · Profesional</p>
+            <h3 class="font-display text-2xl mt-3">Tech Conference 2026</h3>
+            <p class="text-ink/60 text-sm mt-3 leading-relaxed">
+              Desain bersih dan profesional, form RSVP dinamis meminta input nama instansi dan dietary restriction.
+            </p>
+          </div>
+          <div class="perforated-paper"></div>
+          <div class="px-6 py-4 flex items-center justify-between">
+            <span class="mono-chip text-[10px] text-ink/50">RSVP: Instansi + Dietary</span>
+            <span class="text-mist font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+              Lihat Demo →
+            </span>
+          </div>
+        </a>
+
+        <!-- Sample 3: Birthday -->
+        <a href="/sample/demo3" class="group block bg-paper text-ink rounded-md overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
+          <div class="p-6">
+            <p class="mono-chip text-[10px] uppercase text-orchid">Ulang Tahun · Grid · Neon</p>
+            <h3 class="font-display text-2xl mt-3">David's 25th Neon Night</h3>
+            <p class="text-ink/60 text-sm mt-3 leading-relaxed">
+              Penuh warna dengan layout grid modern, form RSVP kustom untuk konfirmasi kedatangan sesi after-party.
+            </p>
+          </div>
+          <div class="perforated-paper"></div>
+          <div class="px-6 py-4 flex items-center justify-between">
+            <span class="mono-chip text-[10px] text-ink/50">RSVP: Sesi After-Party</span>
+            <span class="text-orchid font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+              Lihat Demo →
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BOTTOM / WAITLIST ===================== -->
+  <section id="cta" class="relative">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 py-20 lg:py-28 text-center">
+
+      <svg class="w-14 h-14 mx-auto mb-6 text-brass" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M20 40 L32 20 L44 40 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+
+      <h2 class="font-display text-3xl sm:text-4xl text-paper">
+        Jadi Event Organizer pertama yang coba eventlogix.id
+      </h2>
+      <p class="text-paper/60 mt-4 max-w-xl mx-auto">
+        Daftar waitlist untuk akses awal, atau langsung masuk dan mulai bikin undangan pertamamu hari ini.
+      </p>
+
+      <form class="mt-9 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="#" method="post">
+        <label for="waitlist-email" class="sr-only">Alamat email</label>
+        <input
+          id="waitlist-email"
+          type="email"
+          required
+          placeholder="nama@eventorganizer.com"
+          class="flex-1 bg-ink-soft border border-ink-line rounded-sm px-4 py-3 text-sm text-paper placeholder:text-paper/40 outline-none focus:border-brass"
+        >
+        <button type="submit" class="bg-brass hover:bg-brass-dim text-ink font-semibold text-sm px-6 py-3 rounded-sm transition-colors whitespace-nowrap">
+          Daftar Waitlist
+        </button>
+      </form>
+
+      <div class="flex items-center gap-3 max-w-md mx-auto mt-6">
+        <span class="flex-1 h-px bg-ink-line"></span>
+        <span class="mono-chip text-[11px] uppercase text-paper/40">atau</span>
+        <span class="flex-1 h-px bg-ink-line"></span>
+      </div>
+
+      <button type="button" class="mt-6 inline-flex items-center gap-3 border border-paper/20 hover:border-brass rounded-sm px-6 py-3 text-sm font-semibold text-paper transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 18 18">
+          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84c-.21 1.13-.85 2.09-1.81 2.73v2.27h2.92c1.7-1.57 2.69-3.88 2.69-6.64z"/>
+          <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.27c-.81.54-1.84.87-3.04.87-2.34 0-4.32-1.58-5.03-3.71H.96v2.33C2.44 15.98 5.48 18 9 18z"/>
+          <path fill="#FBBC05" d="M3.97 10.71A5.4 5.4 0 0 1 3.68 9c0-.6.1-1.18.29-1.71V4.96H.96A8.99 8.99 0 0 0 0 9c0 1.45.35 2.83.96 4.04l3.01-2.33z"/>
+          <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.42 0 9 0 5.48 0 2.44 2.02.96 4.96l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/>
+        </svg>
+        Mulai Buat Undangan dengan Google
+      </button>
+
+      <p class="mono-chip text-[10px] uppercase text-paper/30 mt-8">
+        Akses Awal · Tanpa Kartu Kredit · Batalkan Kapan Saja
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="border-t border-ink-line">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-paper/40">
+    <span class="font-display text-paper/70">eventlogix<span class="text-brass">.id</span></span>
+    <p>© 2026 eventlogix.id — Platform Undangan Digital untuk Event Organizer.</p>
+  </div>
+</footer>
+
+</body>
+</html>
